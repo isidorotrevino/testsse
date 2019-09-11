@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: testsse
+  router:
+    static-resources:
+      default:
+        enabled: true
+        mapping: "/**"
+        paths:  "classpath:public"
+        
+postgres:
+  reactive:
+    client:
+      port: 5432
+      host: 127.0.0.1
+      database: "test"
+      user: "test"
+      password: "test"
+      maxSize: 5

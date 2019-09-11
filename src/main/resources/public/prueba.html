@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Ejemplo de notificaciones</title>
+</head>
+<body>
+<ul id="resultados"></ul>
+<script>
+
+var source = new EventSource("http://localhost:8080/suscribirnos");
+source.onmessage = function(event) {
+  document.getElementById("resultados").innerHTML += "<li>"+event.data + "</li>";
+}; 
+source.onopen= function(e) {
+	  // Connection was opened.
+	  console.log("Open ",e);
+	};
+
+source.onerror= function(e) {
+	  console.log("Error ",e);	  
+	};
+
+</script>
+</body>
+</html>
